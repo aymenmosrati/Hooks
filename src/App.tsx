@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import { useDebounce } from "./hooks/useDebounce";
 import { useLocalStorage } from "./hooks/useLocalStorage";
+import ReactHookForm from "./ReactHookForm";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -29,6 +30,9 @@ function App() {
         <button onClick={() => console.log(getItem())}>Get</button>
         <button onClick={removeItem}>Remove</button>
       </div>
+
+      <h1>React hook form</h1>
+      <ReactHookForm />
     </div>
   );
 }

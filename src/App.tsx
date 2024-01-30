@@ -3,8 +3,10 @@ import "./App.css";
 import { useDebounce } from "./hooks/useDebounce";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import ReactHookForm from "./ReactHookForm";
+import useToggle from "./hooks/useToggle";
 
 function App() {
+  const [valuee, toggleValue] = useToggle(false);
   const [search, setSearch] = useState("");
   const [fetch, setFetch] = useState("");
   const [value, setValue] = useState("");
@@ -33,6 +35,14 @@ function App() {
 
       <h1>React hook form</h1>
       <ReactHookForm />
+
+      <h1>useToggle hook</h1>
+      <div>
+        <div>{valuee.toString()}</div>
+        {/* <button onClick={() => toggleValue}>Toggle</button>
+        <button onClick={() => toggleValue(true)}>Make True</button>
+        <button onClick={() => toggleValue(true)}>Make False</button> */}
+      </div>
     </div>
   );
 }
